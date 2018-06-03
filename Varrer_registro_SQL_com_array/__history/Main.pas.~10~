@@ -1,0 +1,90 @@
+unit Main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.FMTBcd, Datasnap.DBClient,
+  Datasnap.Provider, Data.DB, Data.SqlExpr, Vcl.StdCtrls, Data.DbxSqlite;
+
+type
+  TForm1 = class(TForm)
+    SQLConnection: TSQLConnection;
+    SQLQuery: TSQLQuery;
+    DataSetProvider: TDataSetProvider;
+    ClientDataSet: TClientDataSet;
+    btVarrer: TButton;
+    lsValores: TListBox;
+    ClientDataSetitem: TLargeintField;
+    ClientDataSetvalor: TFloatField;
+    btConectar: TButton;
+    procedure btConectarClick(Sender: TObject);
+    function tamanho_buffer():integer;
+    procedure btVarrerClick(Sender: TObject);
+    procedure carrega_dados(buffer:integer);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btConectarClick(Sender: TObject);
+begin
+  try
+    SQLConnection.Connected:=true;
+    SQLQuery.SQL.Clear;
+    SQLQuery.SQL.Text:='SELECT * FROM salvos';
+    SQLQuery.Active:=true;
+    SQLQuery.Open;
+    ClientDataSet.Active:=true;
+    btVarrer.Enabled:=true;
+    showmessage('Conectado ao Banco com sucesso.');
+  except
+    showmessage('Não foi possível conectar ao Banco.');
+  end;
+end;
+
+procedure TForm1.btVarrerClick(Sender: TObject);
+begin
+  carrega_dados(tamanho_buffer());
+end;
+
+procedure TForm1.carrega_dados(buffer: integer);
+var
+  buffer_entrada: array of real;
+  count:integer;
+begin
+  count:=0;    //Buffer começa na posição 0
+  SetLength(buffer_entrada, buffer);  //Tamanho do array dinâmico
+  ClientDataSet.First;
+  while (count < buffer) do
+  begin
+    buffer_entrada[count]:=ClientDataSet.FieldByName('valor').AsExtended;
+    lsValores.Items.Add(floattostr(buffer_entrada[count]));
+    count:=count+1;
+    ClientDataSet.Next;
+  end;
+end;
+
+function TForm1.tamanho_buffer: integer;
+var
+  tamanho:integer;
+begin
+  tamanho:=0;
+  ClientDataSet.First;
+    while not (ClientDataSet.Eof) do
+    begin
+      ClientDataSet.Next;
+      tamanho:=tamanho+1;
+    end;
+  result:=tamanho;
+end;
+
+end.

@@ -1,0 +1,52 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderStyle = bsToolWindow
+  Caption = 'Varrer registros e salvando no array'
+  ClientHeight = 211
+  ClientWidth = 457
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object btVarrer: TButton
+    Left = 24
+    Top = 24
+    Width = 75
+    Height = 25
+    Caption = 'Varrer'
+    TabOrder = 0
+  end
+  object ListBox1: TListBox
+    Left = 198
+    Top = 8
+    Width = 211
+    Height = 185
+    ItemHeight = 13
+    TabOrder = 1
+  end
+  object SQLConnection: TSQLConnection
+    Left = 40
+    Top = 64
+  end
+  object SQLQuery: TSQLQuery
+    Params = <>
+    Left = 40
+    Top = 128
+  end
+  object DataSetProvider: TDataSetProvider
+    Left = 120
+    Top = 128
+  end
+  object ClientDataSet: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 120
+    Top = 64
+  end
+end
