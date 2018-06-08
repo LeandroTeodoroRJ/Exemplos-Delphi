@@ -1,0 +1,56 @@
+object dm: Tdm
+  OldCreateOrder = False
+  Height = 258
+  Width = 382
+  object Conn: TSQLConnection
+    ConnectionName = 'CRUDdb'
+    DriverName = 'Sqlite'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverName=Sqlite'
+      'DriverUnit=Data.DbxSqlite'
+      
+        'DriverPackageLoader=TDBXSqliteDriverLoader,DBXSqliteDriver200.bp' +
+        'l'
+      
+        'MetaDataPackageLoader=TDBXSqliteMetaDataCommandFactory,DbxSqlite' +
+        'Driver200.bpl'
+      'FailIfMissing=True'
+      
+        'Database=C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRU' +
+        'D\database.db')
+    Connected = True
+    Left = 48
+    Top = 40
+  end
+  object Query: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'SELECT * FROM cadastro')
+    SQLConnection = Conn
+    Left = 112
+    Top = 40
+  end
+  object DataSetProvider: TDataSetProvider
+    DataSet = Query
+    Left = 56
+    Top = 120
+  end
+  object ClientDataSet: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DataSetProvider'
+    Left = 152
+    Top = 120
+    object ClientDataSetcodigo: TLargeintField
+      FieldName = 'codigo'
+      Required = True
+    end
+    object ClientDataSetnome: TWideStringField
+      FieldName = 'nome'
+      Required = True
+      Size = 30
+    end
+  end
+end

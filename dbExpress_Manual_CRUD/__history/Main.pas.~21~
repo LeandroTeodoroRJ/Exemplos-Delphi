@@ -1,0 +1,93 @@
+unit Main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, DataModule, Data.Bind.EngExt,
+  Vcl.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, Vcl.StdCtrls,
+  System.Rtti, System.Bindings.Outputs, Vcl.Bind.Editors;
+
+type
+  TForm1 = class(TForm)
+    btConnectar: TButton;
+    btInserir: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    edNome: TEdit;
+    edCod: TEdit;
+    edUltimo: TButton;
+    procedure btConnectarClick(Sender: TObject);
+    procedure btInserirClick(Sender: TObject);
+    procedure receber_dados();
+    procedure atualizar();
+    procedure edUltimoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.atualizar;
+begin
+  with dm do
+  begin
+    Query.SQL.Clear;
+    Query.SQL.Text:='SELECT * FROM cadastro';
+    Query.Active:=true;
+    Query.Open;
+//    ClientDataset.ApplyUpdates(0); //(aplica as modificações)
+//    ClientDataSet.Refresh;
+  end;
+end;
+
+procedure TForm1.btConnectarClick(Sender: TObject);
+begin
+  with dm do
+  begin
+    try
+      Query.SQL.Clear;
+      Query.SQL.Text:='SELECT * FROM cadastro';
+      Query.Active:=true;
+      Query.Open;
+//      ClientDataSet.Active:=true;
+      Showmessage('Conectado ao Banco.');
+    except
+      Showmessage('Não é possível se conectar ao Banco.');
+    end;
+  end;
+end;
+
+procedure TForm1.btInserirClick(Sender: TObject);
+begin
+  dm.Query.SQL.Clear;
+  dm.Query.SQL.Add('INSERT INTO cadastro VALUES (:cod, :noum)');
+  dm.Query.ParamByName('cod').AsInteger:=strtoint(edCod.Text);
+  dm.Query.ParamByName('noum').AsString:=edNome.Text;
+  dm.Query.ExecSQL();
+end;
+
+procedure TForm1.edUltimoClick(Sender: TObject);
+begin
+  atualizar();
+//  dm.ClientDataSet.Last;
+  dm.Query.Last;
+//  receber_dados();
+end;
+
+procedure TForm1.receber_dados;
+begin
+//    edCod.Text:=dm.ClientDataSet.FieldByName('codigo').AsString;
+//    edNome.Text:=dm.ClientDataSet.FieldByName('nome').AsString;
+//      edCod.Text:=dm.Query.FieldByName('codigo').AsString;
+//      edNome.Text:=dm.Query.FieldByName('nome').AsString;
+end;
+
+end.

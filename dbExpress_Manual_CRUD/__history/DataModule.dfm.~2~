@@ -1,0 +1,26 @@
+object dm: Tdm
+  OldCreateOrder = False
+  Height = 258
+  Width = 382
+  object Conn: TSQLConnection
+    ConnectionName = 'CRUDdb'
+    DriverName = 'Sqlite'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverName=Sqlite'
+      'DriverUnit=Data.DbxSqlite'
+      
+        'DriverPackageLoader=TDBXSqliteDriverLoader,DBXSqliteDriver200.bp' +
+        'l'
+      
+        'MetaDataPackageLoader=TDBXSqliteMetaDataCommandFactory,DbxSqlite' +
+        'Driver200.bpl'
+      'FailIfMissing=True'
+      
+        'Database=C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRU' +
+        'D\database.db')
+    Connected = True
+    Left = 48
+    Top = 40
+  end
+end
