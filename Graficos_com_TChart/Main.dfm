@@ -1,0 +1,71 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderStyle = bsToolWindow
+  Caption = 'Gr'#225'ficos com TChart'
+  ClientHeight = 416
+  ClientWidth = 605
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Chart: TChart
+    Left = 32
+    Top = 32
+    Width = 513
+    Height = 321
+    AllowPanning = pmNone
+    Legend.LegendStyle = lsSeries
+    Title.Font.Color = clBlack
+    Title.Font.Height = -16
+    Title.Text.Strings = (
+      'Exemplo Tchart')
+    BottomAxis.Automatic = False
+    BottomAxis.AutomaticMaximum = False
+    BottomAxis.AutomaticMinimum = False
+    BottomAxis.Maximum = 30.000000000000000000
+    BottomAxis.Title.Caption = 'Eixo X'
+    BottomAxis.Title.Font.Height = -13
+    BottomAxis.Title.Font.Style = [fsItalic]
+    LeftAxis.Automatic = False
+    LeftAxis.AutomaticMaximum = False
+    LeftAxis.AutomaticMinimum = False
+    LeftAxis.Maximum = 10.000000000000000000
+    LeftAxis.Title.Caption = 'Eixo Y'
+    LeftAxis.Title.Font.Height = -13
+    LeftAxis.Title.Font.Style = [fsItalic]
+    View3D = False
+    TabOrder = 0
+    DefaultCanvas = 'TGDIPlusCanvas'
+    PrintMargins = (
+      15
+      20
+      15
+      20)
+    ColorPaletteIndex = 13
+    object Series1: TLineSeries
+      Title = 'Exemplo TChart'
+      Brush.BackColor = clDefault
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
+  end
+  object Button1: TButton
+    Left = 32
+    Top = 368
+    Width = 97
+    Height = 25
+    Caption = 'Inserir Dados'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+end

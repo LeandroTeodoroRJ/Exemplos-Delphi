@@ -1,0 +1,57 @@
+unit Main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, VclTee.TeeGDIPlus, VCLTee.TeEngine,
+  VCLTee.Series, Vcl.ExtCtrls, VCLTee.TeeProcs, VCLTee.Chart;
+
+type
+  TForm1 = class(TForm)
+    Chart1: TChart;
+    Series1: TLineSeries;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+end.
+
+{
+INSTRUÇÕES:
+1. Dê um clique duplo sobre o TChart. Na janela de configuração, na guia Chart
+temos uma sub-guia Series. Clique no Add, onde então escolhemos o estilo
+do gráfico que será utilizado.
+
+2. No botão Title podemos nomear a série.
+
+3. Em Chart -> Titles podemos inserir o título do gráfico na aba Text. Assim
+como outras configurações de alinhamento e fonte.
+
+Além do espaçamento vamos dar um efeito gradiente no Painel do gráfico. Na guia Chart->Panel, temos um groupbox Gradient. Defina as cores que irão compor o gradiente clicando nos botões Start Color e End Color, e marque o checkbox Visible para que suas alterações tenham efeito, veja Figura 4.
+
+Para ajustar a largura das bordas que compõem o painel do gráfico temos a propriedade Width, de cada “lado” da borda. Veja Figura 5.
+
+Um gráfico pode possuir várias escalas e para distingui-las vamos aplicar uma cor diferente. Vá até  Guia Chart -> Axis, nela estão todas as configurações possíveis para a escala em uso. Para alterar sua cor, clique no botão Font e formate da maneira que desejar, veja Figura 6.
+
+Como todo gráfico, o nosso não seria diferente, portando vamos dar um título a ele. Acesse a guia Chart -> Titles, conforme Figura 7.
+
+Legendas devem ser utilizadas para facilitar o entendimento do usuário. Podemos indicar o percentual de cada coluna inserindo uma legenda no seu topo. Na guia Series->Marks temos uma propriedade Style, configure-a. Para que seus ajustes tenham efeito marque a opção Visible, veja Figura 8.
+
+Com nosso gráfico configurado ao nosso gosto, vamos agora  passar valores a ele e ver seu funcionamento. Antes disso, configure o formulário principal conforme Figura 9.
+
+No evento onclik do botão de geração do gráfico vamos adicionar os valores a ele, conforme Listagem 1.
+
+Referência: https://www.devmedia.com.br/utilizando-o-teechart/1998
+
+
+}

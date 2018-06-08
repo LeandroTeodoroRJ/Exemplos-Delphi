@@ -1,0 +1,42 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderStyle = bsToolWindow
+  Caption = 'Gr'#225'ficos com TChart'
+  ClientHeight = 416
+  ClientWidth = 605
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Chart1: TChart
+    Left = 32
+    Top = 32
+    Width = 513
+    Height = 321
+    AllowPanning = pmNone
+    Title.Font.Color = clBlack
+    Title.Font.Height = -16
+    Title.Text.Strings = (
+      'Exemplo Tchart')
+    View3D = False
+    TabOrder = 0
+    DefaultCanvas = 'TGDIPlusCanvas'
+    ColorPaletteIndex = 13
+    object Series1: TLineSeries
+      Title = 'Exemplo TChart'
+      Brush.BackColor = clDefault
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
+  end
+end

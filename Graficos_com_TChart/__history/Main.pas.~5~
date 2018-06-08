@@ -1,0 +1,57 @@
+unit Main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, VclTee.TeeGDIPlus, VCLTee.TeEngine,
+  VCLTee.Series, Vcl.ExtCtrls, VCLTee.TeeProcs, VCLTee.Chart, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Chart: TChart;
+    Series1: TLineSeries;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  Chart.Series[0].Clear;  //Apaga os Dados da Série. O [0] é o index que aponta para a primeira série
+  Chart.Series[0].AddXY(0,0);
+  Chart.Series[0].AddXY(10,20);
+
+end;
+
+end.
+
+{
+INSTRUÇÕES:
+1. Dê um clique duplo sobre o TChart. Na janela de configuração, na guia Chart
+temos uma sub-guia Series. Clique no Add, onde então escolhemos o estilo
+do gráfico que será utilizado.
+
+2. No botão Title podemos nomear a série.
+
+3. Em Chart -> Titles podemos inserir o título do gráfico na aba Text. Assim
+como outras configurações de alinhamento e fonte.
+
+4. Em Chart -> Axis temos as configurações dos eixos. Em options podemos
+habilitar se o gráfico será logaritmico, e em Maximum e Minimum os valores
+iniciais e finais dos eixos. Na lista Axes escolhemos o eixo que será editado.
+
+5. Em Legends -> Visible podemos ocultar a lista de pontos que fica à
+direita do gráfico. Ou em Legend Style podemos habilitar, por exemplo,
+só mostrar o nome da série (Series Names)
+}
