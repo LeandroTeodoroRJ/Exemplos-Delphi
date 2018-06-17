@@ -14,11 +14,11 @@
     <Transaction>2018/05/29 13:30:14.000.305,=C:\Users\Leandro\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2018/05/29 13:32:57.000.246,=C:\Users\Leandro\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2018/06/02 18:03:17.000.123,=C:\Users\Leandro\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2018/06/02 18:03:50.000.138,C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\Main.pas=C:\Users\Leandro\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2018/06/02 18:03:50.000.138,C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\Main.dfm=C:\Users\Leandro\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2018/06/02 18:03:59.000.051,C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\CRUD.dproj=C:\Users\Leandro\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2018/06/02 18:03:50.000.138,C:\Users\Leandro\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\Main.dfm</Transaction>
+    <Transaction>2018/06/02 18:03:50.000.138,C:\Users\Leandro\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\Main.pas</Transaction>
+    <Transaction>2018/06/02 18:03:59.000.051,C:\Users\Leandro\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\CRUD.dproj</Transaction>
     <Transaction>2018/06/02 18:04:42.000.297,=C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\Unit1.pas</Transaction>
-    <Transaction>2018/06/02 18:05:18.000.341,C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\DataModule.pas=C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\Unit1.pas</Transaction>
-    <Transaction>2018/06/02 18:05:18.000.341,C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\DataModule.dfm=C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\Unit1.dfm</Transaction>
+    <Transaction>2018/06/02 18:05:18.000.341,C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\Unit1.dfm=C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\DataModule.dfm</Transaction>
+    <Transaction>2018/06/02 18:05:18.000.341,C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\Unit1.pas=C:\DADOS\Informatica\Info_projetos\dbExpress_Manual_CRUD\DataModule.pas</Transaction>
   </Transactions>
 </BorlandProject>

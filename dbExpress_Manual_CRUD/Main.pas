@@ -21,6 +21,8 @@ type
     btPrimeiro: TButton;
     btAlterar: TButton;
     btDeletar: TButton;
+    btAnterior: TButton;
+    btProximo: TButton;
     procedure btConnectarClick(Sender: TObject);
     procedure btInserirClick(Sender: TObject);
     procedure receber_dados();
@@ -29,6 +31,8 @@ type
     procedure btPrimeiroClick(Sender: TObject);
     procedure btDeletarClick(Sender: TObject);
     procedure btAlterarClick(Sender: TObject);
+    procedure btAnteriorClick(Sender: TObject);
+    procedure btProximoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -62,6 +66,13 @@ begin
   dm.Query.ParamByName('cod').AsInteger:=strtoint(edCod.Text);
   dm.Query.ParamByName('noum').AsString:=edNome.Text;
   dm.Query.ExecSQL();
+end;
+
+procedure TForm1.btAnteriorClick(Sender: TObject);
+begin
+  atualizar();
+  dm.ClientDataSet.Prior;
+  receber_dados();
 end;
 
 procedure TForm1.btConnectarClick(Sender: TObject);
@@ -115,7 +126,14 @@ end;
 procedure TForm1.btPrimeiroClick(Sender: TObject);
 begin
   atualizar();
-  dm.ClientDataSet.Prior;
+  dm.ClientDataSet.First;
+  receber_dados();
+end;
+
+procedure TForm1.btProximoClick(Sender: TObject);
+begin
+  atualizar();
+  dm.ClientDataSet.Next;
   receber_dados();
 end;
 

@@ -108,7 +108,7 @@ object Form1: TForm1
     OnClick = btPrimeiroClick
   end
   object btAlterar: TButton
-    Left = 89
+    Left = 170
     Top = 39
     Width = 75
     Height = 25
@@ -117,12 +117,30 @@ object Form1: TForm1
     OnClick = btAlterarClick
   end
   object btDeletar: TButton
-    Left = 170
+    Left = 251
     Top = 39
     Width = 75
     Height = 25
     Caption = 'Deletar'
     TabOrder = 8
     OnClick = btDeletarClick
+  end
+  object btAnterior: TButton
+    Left = 8
+    Top = 39
+    Width = 75
+    Height = 25
+    Caption = 'Anterior'
+    TabOrder = 9
+    OnClick = btAnteriorClick
+  end
+  object btProximo: TButton
+    Left = 89
+    Top = 39
+    Width = 75
+    Height = 25
+    Caption = 'Pr'#243'ximo'
+    TabOrder = 10
+    OnClick = btProximoClick
   end
 end
