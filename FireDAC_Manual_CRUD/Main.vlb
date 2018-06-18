@@ -1,0 +1,16 @@
+﻿[dm.Query]
+Coordinates=412,20,62,87
+
+[]
+Coordinates=10,122,40,51
+
+[dm.]
+Coordinates=222,20,99,51
+Visible=False
+
+[btConnectar]
+Coordinates=124,1,53,51
+
+[dm.ClientDataSet]
+Coordinates=102,10,105,87
+
