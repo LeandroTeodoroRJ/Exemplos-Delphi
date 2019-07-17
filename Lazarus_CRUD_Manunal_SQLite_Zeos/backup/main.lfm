@@ -1,0 +1,136 @@
+object Form1: TForm1
+  Left = 347
+  Height = 360
+  Top = 148
+  Width = 755
+  Caption = 'SQLite Manual CRUD'
+  ClientHeight = 360
+  ClientWidth = 755
+  LCLVersion = '1.8.2.0'
+  object btCarregar: TButton
+    Left = 24
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'Carregar'
+    OnClick = btCarregarClick
+    TabOrder = 0
+  end
+  object edtNome: TEdit
+    Left = 24
+    Height = 27
+    Top = 16
+    Width = 352
+    TabOrder = 1
+    Text = 'Nome'
+  end
+  object edtIdade: TEdit
+    Left = 24
+    Height = 27
+    Top = 56
+    Width = 80
+    TabOrder = 2
+    Text = 'Idade'
+  end
+  object DBGrid1: TDBGrid
+    Left = 24
+    Height = 188
+    Top = 144
+    Width = 707
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 3
+  end
+  object btAvancar: TButton
+    Left = 112
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'Avançar'
+    OnClick = btAvancarClick
+    TabOrder = 4
+  end
+  object btRetroceder: TButton
+    Left = 200
+    Height = 25
+    Top = 96
+    Width = 88
+    Caption = 'Retroceder'
+    OnClick = btRetrocederClick
+    TabOrder = 5
+  end
+  object btPrimeiro: TButton
+    Left = 304
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'Primeiro'
+    OnClick = btPrimeiroClick
+    TabOrder = 6
+  end
+  object btUltimo: TToggleBox
+    Left = 392
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'Ultimo'
+    OnChange = btUltimoChange
+    TabOrder = 7
+  end
+  object btInserir: TButton
+    Left = 480
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'Inserir'
+    OnClick = btInserirClick
+    TabOrder = 8
+  end
+  object btAlterar: TButton
+    Left = 568
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'Alterar'
+    OnClick = btAlterarClick
+    TabOrder = 9
+  end
+  object btDeletar: TButton
+    Left = 656
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'Deletar'
+    OnClick = btDeletarClick
+    TabOrder = 10
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    Connected = True
+    Port = 0
+    Database = '/home/leandro/Dev/Curso_Migracao_Lazarus_FreePascal/SQLite/banco_teste.db3'
+    Protocol = 'sqlite-3'
+    left = 152
+    top = 280
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM pessoa'
+    )
+    Params = <>
+    left = 264
+    top = 280
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    left = 368
+    top = 280
+  end
+end
